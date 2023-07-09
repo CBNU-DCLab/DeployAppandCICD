@@ -7,4 +7,5 @@ spec:
     app: django
   ports:
     - port: 443
+    - nodePort: 30084
   type: NodePort
