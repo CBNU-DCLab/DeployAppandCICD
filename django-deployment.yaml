@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: django
+  labels:
+    app: django
+spec:
+  containers:
+  - name: django
+    image: jeongmin99/hi:1.4
+    imagePullPolicy: IfNotPresent
+    resources:
+      requests:
+        cpu: 200m
+        memory: 500Mi
+    ports:
+    - containerPort: 8000
+    volumeMounts:
+    - mountPath: /app/finger.stt/.static_root
+      name: django-static
+    command: ["/bin/bash"]
+    args: ["-c", "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py collectstatic --no-input && gunicorn --bind 0:8000 -t 240 fingerai.wsgi:application"] 
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: django-static
+      mountPath: /static
+    - name: config
+      mountPath: /etc/nginx/conf.d
+  restartPolicy: Always
+  volumes:
+  - name: django-static
+    hostPath:
+      path: /root/django-static
+  - name: config
+    hostPath:
+      path: /root/project/nginx2/conf.d
