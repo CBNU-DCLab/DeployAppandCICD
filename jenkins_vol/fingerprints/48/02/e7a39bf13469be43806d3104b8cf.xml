@@ -1,0 +1,28 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2023-07-24 05:24:16.267 UTC</timestamp>
+  <md5sum>4802e7a39bf13469be43806d3104b8cf</md5sum>
+  <fileName>Credential id=jenkins-ssh name=jenkins</fileName>
+  <usages>
+    <entry>
+      <string>dclab kube pipeline</string>
+      <ranges>8-11</ranges>
+    </entry>
+    <entry>
+      <string>test</string>
+      <ranges>293</ranges>
+    </entry>
+  </usages>
+  <facets>
+    <com.cloudbees.plugins.credentials.fingerprints.ItemCredentialsFingerprintFacet plugin="credentials@1254.vb_96f366e7b_a_d">
+      <timestamp>1690177653730</timestamp>
+      <itemFullName>test</itemFullName>
+      <timestamp0>1690177611307</timestamp0>
+    </com.cloudbees.plugins.credentials.fingerprints.ItemCredentialsFingerprintFacet>
+    <com.cloudbees.plugins.credentials.fingerprints.ItemCredentialsFingerprintFacet plugin="credentials@1254.vb_96f366e7b_a_d">
+      <timestamp>1690178002535</timestamp>
+      <itemFullName>dclab kube pipeline</itemFullName>
+      <timestamp0>1690177904705</timestamp0>
+    </com.cloudbees.plugins.credentials.fingerprints.ItemCredentialsFingerprintFacet>
+  </facets>
+</fingerprint>

@@ -1,0 +1,134 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@1316.vd2290d3341a_f">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <jenkins.metrics.impl.TimeInQueueAction plugin="metrics@4.2.18-439.v86a_20b_a_8318b_">
+      <queuingDurationMillis>2</queuingDurationMillis>
+      <blockedDurationMillis>0</blockedDurationMillis>
+      <buildableDurationMillis>0</buildableDurationMillis>
+      <waitingDurationMillis>0</waitingDurationMillis>
+    </jenkins.metrics.impl.TimeInQueueAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="pipeline-groovy-lib@656.va_a_ceeb_6ffb_f7">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <jenkins.model.InterruptedBuildAction>
+      <causes>
+        <org.jenkinsci.plugins.workflow.support.steps.ExecutorStepExecution_-QueueTaskCancelled plugin="workflow-durable-task-step@1247.v7f9dfea_b_4fd0"/>
+      </causes>
+    </jenkins.model.InterruptedBuildAction>
+  </actions>
+  <queueId>390</queueId>
+  <timestamp>1690177355306</timestamp>
+  <startTime>1690177355308</startTime>
+  <result>ABORTED</result>
+  <duration>4981</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>ABORTED</result>
+    <script>podTemplate(label: &apos;docker-build&apos;, 
+  containers: [
+    containerTemplate(
+      name: &apos;git&apos;,
+      image: &apos;alpine/git&apos;,
+      command: &apos;cat&apos;,
+      ttyEnabled: true
+    ),
+    containerTemplate(
+      name: &apos;docker&apos;,
+      image: &apos;docker&apos;,
+      command: &apos;cat&apos;,
+      ttyEnabled: true
+    ),containerTemplate(
+      name: &quot;kubectl&quot;,
+      image: &quot;lachlanevenson/k8s-kubectl&quot;,
+      command: &quot;cat&quot;,
+      ttyEnabled: true
+    )
+  ],
+  volumes: [ 
+    hostPathVolume(mountPath: &apos;/var/run/docker.sock&apos;, hostPath: &apos;/var/run/docker.sock&apos;), 
+  ]
+) {
+    node(&apos;docker-build&apos;) {
+        def dockerHubCred = &apos;test&apos;
+        def appImage
+        
+        stage(&apos;Checkout&apos;){
+            container(&apos;git&apos;){
+                checkout scm
+            }
+        }
+        
+        stage(&apos;Build&apos;){
+            container(&apos;docker&apos;){
+                script {
+                    appImage = docker.build(&quot;jeongmin99/newmodule&quot;)
+                }
+            }
+        }
+        
+       
+
+        stage(&apos;Push&apos;){
+            container(&apos;docker&apos;){
+                script {
+                    docker.withRegistry(&apos;https://registry.hub.docker.com&apos;, dockerHubCred){
+                        appImage.push(&quot;${env.BUILD_NUMBER}&quot;)
+                        appImage.push(&quot;latest&quot;)
+                    }
+                }
+            }
+        }
+
+     stage(&apos;Deploying container to Kubernetes&apos;) {
+        container(&quot;kubectl&quot;) {
+            echo &apos;Deploying&apos;
+            sh &apos;kubectl apply -f new-deployment.yaml -f new-service.yaml&apos;
+        }
+     }
+    }
+}
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>20770538</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>12610264</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>55176785</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>24279088</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>12056372</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>9</iota>
+    <head>1:9</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

@@ -1,0 +1,9 @@
+commit 966324d81a2f531d09de2b9f80c40bdd3106d085
+tree 23c87a01cf3dc878a4d68bbb16db653fd4dc7683
+parent cdce47826771a81cafa00eab48c2ede72531b6cf
+author jihyun-dev <50940231+jihyun-dev@users.noreply.github.com> 2023-06-30 14:52:09 +0900
+committer GitHub <noreply@github.com> 2023-06-30 14:52:09 +0900
+
+    Create new-service.yaml
+
+:000000 100644 0000000000000000000000000000000000000000 a3bb88ba334c2e2669c4f999a3105119a4f3f093 A	new-service.yaml

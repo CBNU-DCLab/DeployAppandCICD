@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: Kubernetes Client API Plugin
+Specification-Version: 6.4
+Implementation-Title: Kubernetes Client API Plugin
+Implementation-Version: 6.4.1-215.v2ed17097a_8e9
+Group-Id: org.jenkins-ci.plugins
+Short-Name: kubernetes-client-api
+Long-Name: Kubernetes Client API Plugin
+Url: https://github.com/jenkinsci/kubernetes-client-api-plugin
+Plugin-Version: 6.4.1-215.v2ed17097a_8e9
+Hudson-Version: 2.361.4
+Jenkins-Version: 2.361.4
+Plugin-Dependencies: okhttp-api:4.9.3-108.v0feda04578cf,snakeyaml-api:1.
+ 33-90.v80dcb_3814d35,bouncycastle-api:2.26,jackson2-api:2.13.4.20221013
+ -295.v8e29ea_354141
+Plugin-Developers: 
+Support-Dynamic-Loading: true
+Plugin-License-Name: The Apache Software License, Version 2.0
+Plugin-License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
+Plugin-ScmUrl: https://github.com/jenkinsci/kubernetes-client-api-plugin
+

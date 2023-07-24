@@ -1,0 +1,27 @@
+Started by user [8mha:////4BB5pFU8yk4XnEFZXZ/mx+Xqnik2+am0LDdht9Znt4XvAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/test3
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential 1abad921-9600-4d23-bdfe-a33347145bc6
+Cloning the remote Git repository
+Cloning repository https://github.com/jihyun-dev/JenkinsTest.git
+ > git init /var/jenkins_home/workspace/test3 # timeout=10
+Fetching upstream changes from https://github.com/jihyun-dev/JenkinsTest.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/jihyun-dev/JenkinsTest.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/jihyun-dev/JenkinsTest.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision ca170becfd6e486b4ca05b2508bacbc66e879578 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ca170becfd6e486b4ca05b2508bacbc66e879578 # timeout=10
+Commit message: "Update Jenkinsfile"
+First time build. Skipping changelog.
+[test3] $ /bin/sh -xe /tmp/jenkins10094256037061991964.sh
++ echo Githun hook trigger
+Githun hook trigger
+Finished: SUCCESS

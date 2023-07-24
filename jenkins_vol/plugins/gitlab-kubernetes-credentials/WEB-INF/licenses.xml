@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<l:dependencies xmlns:l='licenses' groupId='io.jenkins.plugins' artifactId='gitlab-kubernetes-credentials' version='132.v23fd732822dc'><l:dependency name='GitLab Credentials - Kubernetes Integration' groupId='io.jenkins.plugins' artifactId='gitlab-kubernetes-credentials' version='132.v23fd732822dc' url=''><l:description>Integrates GitLab credentials with the k8s credential provider</l:description><l:license name='MIT License' url='https://opensource.org/licenses/MIT'/></l:dependency></l:dependencies>

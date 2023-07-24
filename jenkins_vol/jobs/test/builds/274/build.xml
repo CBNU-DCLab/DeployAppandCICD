@@ -1,0 +1,199 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@1316.vd2290d3341a_f">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <jenkins.metrics.impl.TimeInQueueAction plugin="metrics@4.2.18-439.v86a_20b_a_8318b_">
+      <queuingDurationMillis>3</queuingDurationMillis>
+      <blockedDurationMillis>0</blockedDurationMillis>
+      <buildableDurationMillis>0</buildableDurationMillis>
+      <waitingDurationMillis>0</waitingDurationMillis>
+    </jenkins.metrics.impl.TimeInQueueAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="pipeline-groovy-lib@656.va_a_ceeb_6ffb_f7">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <com.cloudbees.plugins.credentials.builds.CredentialsParameterBinder plugin="credentials@1254.vb_96f366e7b_a_d">
+      <boundCredentials class="concurrent-hash-map"/>
+    </com.cloudbees.plugins.credentials.builds.CredentialsParameterBinder>
+    <hudson.plugins.git.util.BuildData plugin="git@5.1.0">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/main</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@4.4.0">
+              <sha1>1823dd4d90cc7595b4f75919b19d40c9e847ae77</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/main</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>274</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <scmName></scmName>
+      <remoteUrls>
+        <string>https://github.com/jeongmin99/newModule.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState plugin="workflow-scm-step@415.v434365564324">
+      <revisionStates>
+        <entry>
+          <string>git https://github.com/jeongmin99/newModule.git</string>
+          <hudson.scm.SCMRevisionState_-None/>
+        </entry>
+      </revisionStates>
+    </org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState>
+    <org.jenkinsci.plugins.workflow.cps.EnvActionImpl plugin="workflow-cps@3697.vb_470e454c232">
+      <env class="tree-map"/>
+    </org.jenkinsci.plugins.workflow.cps.EnvActionImpl>
+    <jenkins.metrics.impl.SubTaskTimeInQueueAction plugin="metrics@4.2.18-439.v86a_20b_a_8318b_">
+      <queuingDurationMillis>13347</queuingDurationMillis>
+      <blockedDurationMillis>0</blockedDurationMillis>
+      <buildableDurationMillis>13347</buildableDurationMillis>
+      <waitingDurationMillis>0</waitingDurationMillis>
+      <executingDurationMillis>59128</executingDurationMillis>
+      <workUnitCount>1</workUnitCount>
+    </jenkins.metrics.impl.SubTaskTimeInQueueAction>
+  </actions>
+  <queueId>338</queueId>
+  <timestamp>1688104449815</timestamp>
+  <startTime>1688104449817</startTime>
+  <result>SUCCESS</result>
+  <duration>73426</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>podTemplate(label: &apos;docker-build&apos;, 
+  containers: [
+    containerTemplate(
+      name: &apos;git&apos;,
+      image: &apos;alpine/git&apos;,
+      command: &apos;cat&apos;,
+      ttyEnabled: true
+    ),
+    containerTemplate(
+      name: &apos;docker&apos;,
+      image: &apos;docker&apos;,
+      command: &apos;cat&apos;,
+      ttyEnabled: true
+    ),containerTemplate(
+      name: &quot;kubectl&quot;,
+      image: &quot;lachlanevenson/k8s-kubectl&quot;,
+      command: &quot;cat&quot;,
+      ttyEnabled: true
+    )
+  ],
+  volumes: [ 
+    hostPathVolume(mountPath: &apos;/var/run/docker.sock&apos;, hostPath: &apos;/var/run/docker.sock&apos;), 
+  ]
+) {
+    node(&apos;docker-build&apos;) {
+        def dockerHubCred = &apos;test&apos;
+        def appImage
+        
+        stage(&apos;Checkout&apos;){
+            container(&apos;git&apos;){
+                checkout scm
+            }
+        }
+        
+        stage(&apos;Build&apos;){
+            container(&apos;docker&apos;){
+                script {
+                    appImage = docker.build(&quot;jeongmin99/newmodule&quot;)
+                }
+            }
+        }
+        
+       
+
+        stage(&apos;Push&apos;){
+            container(&apos;docker&apos;){
+                script {
+                    docker.withRegistry(&apos;https://registry.hub.docker.com&apos;, dockerHubCred){
+                        appImage.push(&quot;${env.BUILD_NUMBER}&quot;)
+                        appImage.push(&quot;latest&quot;)
+                    }
+                }
+            }
+        }
+
+     stage(&apos;Deploying container to Kubernetes&apos;) {
+        container(&quot;kubectl&quot;) {
+            sh &apos;kubectl apply -f new-deployment.yaml -f new-service.yaml&apos;
+        }
+     }
+    }
+}
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>133672643</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>74896195</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>3035486648</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>24295089</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>727782925</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>91</iota>
+    <head>1:91</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList">
+    <org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+      <scm class="hudson.plugins.git.GitSCM" plugin="git@5.1.0">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+          <hudson.plugins.git.UserRemoteConfig>
+            <url>https://github.com/jeongmin99/newModule.git</url>
+            <credentialsId>jenkins-ssh</credentialsId>
+          </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches>
+          <hudson.plugins.git.BranchSpec>
+            <name>*/main</name>
+          </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="empty-list"/>
+        <extensions/>
+      </scm>
+      <node>docker-build-lwh9p-prtqj</node>
+      <workspace>/home/jenkins/agent/workspace/test</workspace>
+      <changelogFile>/var/jenkins_home/jobs/test/builds/274/changelog6060747134134834014.xml</changelogFile>
+      <pollingBaseline class="hudson.scm.SCMRevisionState$None" reference="../../../actions/org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState/revisionStates/entry/hudson.scm.SCMRevisionState_-None"/>
+    </org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+  </checkouts>
+</flow-build>

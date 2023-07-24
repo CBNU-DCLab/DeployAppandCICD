@@ -1,0 +1,19 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@839.v35e2736cfd5c">
+  <node class="cps.n.StepStartNode" plugin="workflow-cps@3697.vb_470e454c232">
+    <parentIds>
+      <string>78</string>
+    </parentIds>
+    <id>79</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.support.steps.StageStep</descriptorId>
+  </node>
+  <actions>
+    <wf.a.BodyInvocationAction plugin="workflow-api@1219.v05cd837ea_249"/>
+    <wf.a.LabelAction plugin="workflow-api@1219.v05cd837ea_249">
+      <displayName>Deploying container to Kubernetes</displayName>
+    </wf.a.LabelAction>
+    <wf.a.TimingAction plugin="workflow-api@1219.v05cd837ea_249">
+      <startTime>1688098474431</startTime>
+    </wf.a.TimingAction>
+  </actions>
+</Tag>

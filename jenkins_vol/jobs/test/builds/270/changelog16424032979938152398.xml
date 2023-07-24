@@ -1,0 +1,9 @@
+commit 17a565871e4368aa6e9bfc7b712dfe358df22a90
+tree 6913083578ab3872ff7a1681d30eb0e20224b149
+parent c9d3f888cb336734fc8f3e7898f1d532a122c8bd
+author jihyun-dev <50940231+jihyun-dev@users.noreply.github.com> 2023-06-30 14:44:44 +0900
+committer GitHub <noreply@github.com> 2023-06-30 14:44:44 +0900
+
+    Create new-deployment.yaml
+
+:000000 100644 0000000000000000000000000000000000000000 2354e78f1b81c8138ee6a6c8b8947425b01875f4 A	new-deployment.yaml

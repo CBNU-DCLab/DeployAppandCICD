@@ -1,0 +1,94 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@839.v35e2736cfd5c">
+  <node class="cps.n.StepStartNode" plugin="workflow-cps@3697.vb_470e454c232">
+    <parentIds>
+      <string>2</string>
+    </parentIds>
+    <id>3</id>
+    <descriptorId>org.csanchez.jenkins.plugins.kubernetes.pipeline.PodTemplateStep</descriptorId>
+  </node>
+  <actions>
+    <s.a.LogStorageAction/>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@3697.vb_470e454c232">
+      <arguments>
+        <entry>
+          <string>volumes</string>
+          <list>
+            <org.jenkinsci.plugins.workflow.cps.UninstantiatedDescribableWithInterpolation>
+              <symbol>hostPathVolume</symbol>
+              <arguments class="linked-hash-map">
+                <entry>
+                  <string>mountPath</string>
+                  <string>/var/run/docker.sock</string>
+                </entry>
+                <entry>
+                  <string>hostPath</string>
+                  <string>/var/run/docker.sock</string>
+                </entry>
+              </arguments>
+              <interpolatedStrings/>
+            </org.jenkinsci.plugins.workflow.cps.UninstantiatedDescribableWithInterpolation>
+          </list>
+        </entry>
+        <entry>
+          <string>containers</string>
+          <list>
+            <org.jenkinsci.plugins.workflow.cps.UninstantiatedDescribableWithInterpolation>
+              <symbol>containerTemplate</symbol>
+              <arguments class="linked-hash-map">
+                <entry>
+                  <string>name</string>
+                  <string>git</string>
+                </entry>
+                <entry>
+                  <string>image</string>
+                  <string>alpine/git</string>
+                </entry>
+                <entry>
+                  <string>command</string>
+                  <string>cat</string>
+                </entry>
+                <entry>
+                  <string>ttyEnabled</string>
+                  <boolean>true</boolean>
+                </entry>
+              </arguments>
+              <interpolatedStrings/>
+            </org.jenkinsci.plugins.workflow.cps.UninstantiatedDescribableWithInterpolation>
+            <org.jenkinsci.plugins.workflow.cps.UninstantiatedDescribableWithInterpolation>
+              <symbol>containerTemplate</symbol>
+              <arguments class="linked-hash-map">
+                <entry>
+                  <string>name</string>
+                  <string>docker</string>
+                </entry>
+                <entry>
+                  <string>image</string>
+                  <string>docker</string>
+                </entry>
+                <entry>
+                  <string>command</string>
+                  <string>cat</string>
+                </entry>
+                <entry>
+                  <string>ttyEnabled</string>
+                  <boolean>true</boolean>
+                </entry>
+              </arguments>
+              <interpolatedStrings/>
+            </org.jenkinsci.plugins.workflow.cps.UninstantiatedDescribableWithInterpolation>
+          </list>
+        </entry>
+        <entry>
+          <string>label</string>
+          <string>docker-build</string>
+        </entry>
+      </arguments>
+      <sensitiveVariables/>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@1219.v05cd837ea_249">
+      <startTime>1688058188886</startTime>
+    </wf.a.TimingAction>
+  </actions>
+</Tag>

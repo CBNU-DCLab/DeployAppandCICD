@@ -1,0 +1,26 @@
+Started by user [8mha:////4BB5pFU8yk4XnEFZXZ/mx+Xqnik2+am0LDdht9Znt4XvAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building on the built-in node in workspace /var/jenkins_home/workspace/test2
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential jenkins-ssh
+Cloning the remote Git repository
+Cloning repository https://github.com/jeongmin99/newModule.git
+ > git init /var/jenkins_home/workspace/test2 # timeout=10
+Fetching upstream changes from https://github.com/jeongmin99/newModule.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_SSH to set credentials 
+Verifying host key using known hosts file
+[8mha:////4F3jJBmMd/9urYTmTaTIQYiawaDmgMPWF4OUNU2GcGefAAAAwB+LCAAAAAAAAP9djLENwjAQRY8gGIAS0VE77ihAVDQgRVAwQRSMfYl1tuwLStZgDWgYgnFYgIpE6fjN+19fes8PTGKAhakv0VFaOIrOqnTfehUsUnV0rFbbx2t79+8EkgNMrSLNJoNxHSzDLCvzWy5tTlqeOSDpTRNg/qfbDexlMGSUADS+K1+Gk2H2cS2lt7VGimmpqOqJTmpkUVhUxHI53KKTcrdFjEYYF1lUqhU3FfCKRc7o6Af/njhS1AAAAA==[0mYou're using 'Known hosts file' strategy to verify ssh host keys, but your known_hosts file does not exist, please go to 'Manage Jenkins' -> 'Configure Global Security' -> 'Git Host Key Verification Configuration' and configure host key verification.
+ > git fetch --tags --force --progress -- https://github.com/jeongmin99/newModule.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/jeongmin99/newModule.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision c16498006ec62e19fb2a61962d9e578a770b0a76 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f c16498006ec62e19fb2a61962d9e578a770b0a76 # timeout=10
+Commit message: "Update Jenkinsfile"
+First time build. Skipping changelog.
+Finished: SUCCESS

@@ -1,0 +1,68 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@839.v35e2736cfd5c">
+  <node class="cps.n.StepEndNode" plugin="workflow-cps@3697.vb_470e454c232">
+    <parentIds>
+      <string>5</string>
+    </parentIds>
+    <id>6</id>
+    <startId>5</startId>
+  </node>
+  <actions>
+    <wf.a.TimingAction plugin="workflow-api@1219.v05cd837ea_249">
+      <startTime>1690177620084</startTime>
+    </wf.a.TimingAction>
+    <wf.a.ErrorAction plugin="workflow-api@1219.v05cd837ea_249">
+      <error class="org.jenkinsci.plugins.workflow.steps.FlowInterruptedException" plugin="workflow-step-api@639.v6eca_cd8c04a_a_">
+        <stackTrace>
+          <trace>org.jenkinsci.plugins.workflow.support.steps.ExecutorStepExecution$CancelledItemListener.onLeft(ExecutorStepExecution.java:245)</trace>
+          <trace>hudson.model.Queue$LeftItem.lambda$enter$0(Queue.java:2808)</trace>
+          <trace>jenkins.util.Listeners.lambda$notify$0(Listeners.java:59)</trace>
+          <trace>jenkins.util.Listeners.notify(Listeners.java:67)</trace>
+          <trace>hudson.model.Queue$LeftItem.enter(Queue.java:2808)</trace>
+          <trace>hudson.model.Queue$Item.cancel(Queue.java:2430)</trace>
+          <trace>hudson.model.Queue.cancel(Queue.java:733)</trace>
+          <trace>org.csanchez.jenkins.plugins.kubernetes.PodUtils.cancelQueueItemFor(PodUtils.java:99)</trace>
+          <trace>org.csanchez.jenkins.plugins.kubernetes.pod.retention.Reaper$TerminateAgentOnContainerTerminated.onEvent(Reaper.java:418)</trace>
+          <trace>org.csanchez.jenkins.plugins.kubernetes.pod.retention.Reaper$CloudPodWatcher.lambda$eventReceived$0(Reaper.java:318)</trace>
+          <trace>jenkins.util.Listeners.lambda$notify$0(Listeners.java:59)</trace>
+          <trace>jenkins.util.Listeners.notify(Listeners.java:67)</trace>
+          <trace>org.csanchez.jenkins.plugins.kubernetes.pod.retention.Reaper$CloudPodWatcher.eventReceived(Reaper.java:316)</trace>
+          <trace>org.csanchez.jenkins.plugins.kubernetes.pod.retention.Reaper$CloudPodWatcher.eventReceived(Reaper.java:276)</trace>
+          <trace>io.fabric8.kubernetes.client.utils.internal.WatcherToggle.eventReceived(WatcherToggle.java:49)</trace>
+          <trace>io.fabric8.kubernetes.client.dsl.internal.AbstractWatchManager.eventReceived(AbstractWatchManager.java:191)</trace>
+          <trace>io.fabric8.kubernetes.client.dsl.internal.AbstractWatchManager.onMessage(AbstractWatchManager.java:268)</trace>
+          <trace>io.fabric8.kubernetes.client.dsl.internal.WatcherWebSocketListener.onMessage(WatcherWebSocketListener.java:55)</trace>
+          <trace>io.fabric8.kubernetes.client.okhttp.OkHttpWebSocketImpl$1.onMessage(OkHttpWebSocketImpl.java:117)</trace>
+          <trace>okhttp3.internal.ws.RealWebSocket.onReadMessage(RealWebSocket.kt:333)</trace>
+          <trace>okhttp3.internal.ws.WebSocketReader.readMessageFrame(WebSocketReader.kt:245)</trace>
+          <trace>okhttp3.internal.ws.WebSocketReader.processNextFrame(WebSocketReader.kt:106)</trace>
+          <trace>okhttp3.internal.ws.RealWebSocket.loopReader(RealWebSocket.kt:293)</trace>
+          <trace>okhttp3.internal.ws.RealWebSocket$connect$1.onResponse(RealWebSocket.kt:195)</trace>
+          <trace>okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:519)</trace>
+          <trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)</trace>
+          <trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)</trace>
+          <trace>java.base/java.lang.Thread.run(Thread.java:829)</trace>
+        </stackTrace>
+        <suppressedExceptions>
+          <wf.a.ErrorAction_-ErrorId plugin="workflow-api@1219.v05cd837ea_249">
+            <stackTrace/>
+            <suppressedExceptions class="empty-list"/>
+            <uuid>3ca3a4dc-9cc7-4cfe-a298-cb2c4dfe675c</uuid>
+          </wf.a.ErrorAction_-ErrorId>
+        </suppressedExceptions>
+        <result>
+          <name>ABORTED</name>
+          <ordinal>4</ordinal>
+          <color>ABORTED</color>
+          <completeBuild>false</completeBuild>
+        </result>
+        <causes class="java.util.Arrays$ArrayList">
+          <a class="jenkins.model.CauseOfInterruption-array">
+            <org.jenkinsci.plugins.workflow.support.steps.ExecutorStepExecution_-QueueTaskCancelled plugin="workflow-durable-task-step@1247.v7f9dfea_b_4fd0"/>
+          </a>
+        </causes>
+        <actualInterruption>true</actualInterruption>
+      </error>
+    </wf.a.ErrorAction>
+  </actions>
+</Tag>

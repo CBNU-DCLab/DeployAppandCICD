@@ -1,0 +1,11 @@
+commit 5976b4598945db07c5e418d230d2f4e2d4703e92
+tree fea74726cca471d562685c6f1fff7473952a70fb
+parent 7b70ed459b27a20ffe92e933e99e5eb34d2dfc86
+author jihyun-dev <50940231+jihyun-dev@users.noreply.github.com> 2023-06-29 18:19:29 +0900
+committer GitHub <noreply@github.com> 2023-06-29 18:19:29 +0900
+
+    Update Jenkinsfile
+    
+    njh-kubectl 경로 추가 및 kubectl apply
+
+:100644 100644 10232f174463c2553a8323c048bad8f92e21745a 72a04db91235d7663edf0608acd4e99cbd28657a M	Jenkinsfile

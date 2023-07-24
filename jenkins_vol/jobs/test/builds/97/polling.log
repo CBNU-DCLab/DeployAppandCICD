@@ -1,0 +1,16 @@
+Started on Jun 29, 2023, 3:03:00 PM
+Using strategy: Default
+[poll] Last Built Revision: Revision 4cf96d406004121d6b5c462ec78596efb6c7c95a (refs/remotes/origin/main)
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential jenkins-ssh
+ > git --version # timeout=10
+ > git --version # 'git version 2.30.2'
+using GIT_SSH to set credentials 
+Verifying host key using known hosts file
+[8mha:////4F3jJBmMd/9urYTmTaTIQYiawaDmgMPWF4OUNU2GcGefAAAAwB+LCAAAAAAAAP9djLENwjAQRY8gGIAS0VE77ihAVDQgRVAwQRSMfYl1tuwLStZgDWgYgnFYgIpE6fjN+19fes8PTGKAhakv0VFaOIrOqnTfehUsUnV0rFbbx2t79+8EkgNMrSLNJoNxHSzDLCvzWy5tTlqeOSDpTRNg/qfbDexlMGSUADS+K1+Gk2H2cS2lt7VGimmpqOqJTmpkUVhUxHI53KKTcrdFjEYYF1lUqhU3FfCKRc7o6Af/njhS1AAAAA==[0mYou're using 'Known hosts file' strategy to verify ssh host keys, but your known_hosts file does not exist, please go to 'Manage Jenkins' -> 'Configure Global Security' -> 'Git Host Key Verification Configuration' and configure host key verification.
+ > git ls-remote -h -- https://github.com/jeongmin99/newModule.git # timeout=10
+Found 1 remote heads on https://github.com/jeongmin99/newModule.git
+[poll] Latest remote head revision on refs/heads/main is: ecd234f95594e5833fc58120c110b6211005eb78
+Done. Took 0.71 sec
+Changes found

@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: Pipeline: Groovy
+Specification-Version: 0.0
+Implementation-Title: Pipeline: Groovy
+Implementation-Version: 3697.vb_470e454c232
+Group-Id: org.jenkins-ci.plugins.workflow
+Artifact-Id: workflow-cps
+Short-Name: workflow-cps
+Long-Name: Pipeline: Groovy
+Url: https://github.com/jenkinsci/workflow-cps-plugin
+Compatible-Since-Version: 2.18
+Plugin-Version: 3697.vb_470e454c232
+Hudson-Version: 2.387.3
+Jenkins-Version: 2.387.3
+Plugin-Dependencies: ionicons-api:56.v1b_1c8c49374e,theme-manager:193.vc
+ ef22f6c5f2b_;resolution:=optional,workflow-api:1213.v646def1087f9,workf
+ low-scm-step:408.v7d5b_135a_b_d49,workflow-step-api:639.v6eca_cd8c04a_a
+ _,workflow-support:839.v35e2736cfd5c,scm-api:672.v64378a_b_20c60,script
+ -security:1251.vfe552ed55f8d,structs:324.va_f5d6774f3a_d,support-core:1
+ 283.v9ddb_0284a_00c;resolution:=optional
+Plugin-Developers: 
+Plugin-License-Name: MIT License
+Plugin-License-Url: https://opensource.org/licenses/MIT
+Plugin-ScmConnection: scm:git:https://github.com/jenkinsci/workflow-cps-
+ plugin.git
+Plugin-ScmTag: b470e454c2325afb8bf047b08f9ad7aca44a8451
+Plugin-ScmUrl: https://github.com/jenkinsci/workflow-cps-plugin
+Plugin-GitHash: b470e454c2325afb8bf047b08f9ad7aca44a8451
+Implementation-Build: b470e454c2325afb8bf047b08f9ad7aca44a8451
+

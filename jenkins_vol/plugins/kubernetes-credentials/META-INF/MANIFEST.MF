@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: Kubernetes Credentials Plugin
+Specification-Version: 0.10
+Implementation-Title: Kubernetes Credentials Plugin
+Implementation-Version: 0.10.0
+Group-Id: org.jenkinsci.plugins
+Short-Name: kubernetes-credentials
+Long-Name: Kubernetes Credentials Plugin
+Url: https://github.com/jenkinsci/kubernetes-credentials-plugin/
+Plugin-Version: 0.10.0
+Hudson-Version: 2.332.4
+Jenkins-Version: 2.332.4
+Plugin-Dependencies: apache-httpcomponents-client-4-api:4.5.13-138.v4e7d
+ 9a_7b_a_e61,authentication-tokens:1.3,credentials:1087.1089.v2f1b_9a_b_
+ 040e4,docker-commons:1.15;resolution:=optional,google-oauth-plugin:0.8;
+ resolution:=optional,jackson2-api:2.13.4.20221013-295.v8e29ea_354141,ku
+ bernetes-client-api:6.3.1-206.v76d3b_6b_14db_b,plain-credentials:139.ve
+ d2b_9cf7587b;resolution:=optional
+Plugin-Developers: Max Laverse:max_laverse:
+Plugin-License-Name: Apache License 2.0
+Plugin-License-Url: https://www.apache.org/licenses/LICENSE-2.0
+Plugin-ScmUrl: https://github.com/jenkinsci/kubernetes-credentials-plugi
+ n
+

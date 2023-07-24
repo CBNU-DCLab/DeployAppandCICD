@@ -1,0 +1,68 @@
+Started by an SCM change
+Obtained Jenkinsfile from git https://github.com/jeongmin99/newModule.git
+[8mha:////4LiovPVEEzbVGCwyGPIYd/TvwRyFc4xagHxsvd3clMF3AAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4L4QZmbLZ3b6qIQ2FUDgR9pHYrYhEo3XL00i30eDIyX7AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] podTemplate
+[8mha:////4DKmkAb+1af7aZ1YAHgh0AHYkjHD1D5ytEZhOvGwOvTjAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4Lf18tnxfEHpH+uWpb0Z/p2tm1cq6Qf/OedEAMcoyaczAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] node
+Created Pod: kubernetes default/docker-build-5znt0-wjps3
+default/docker-build-5znt0-wjps3 Container jnlp was terminated (Exit Code: 255, Reason: Error)
+
+- docker -- running
+-----Logs-------------
+
+
+- git -- running
+-----Logs-------------
+
+
+- jnlp -- terminated (255)
+-----Logs-------------
+Jun 29, 2023 11:33:16 AM hudson.remoting.Engine startEngine
+INFO: Using Remoting version: 3107.v665000b_51092
+Jun 29, 2023 11:33:16 AM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using /home/jenkins/agent/remoting as a remoting work directory
+Jun 29, 2023 11:33:16 AM org.jenkinsci.remoting.engine.WorkDirManager setupLogging
+INFO: Both error and output logs will be printed to /home/jenkins/agent/remoting
+Jun 29, 2023 11:33:16 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Locating server among [http://jenkins-leader-svc.jenkins.svc.cluster.local/]
+Jun 29, 2023 11:33:16 AM hudson.remoting.jnlp.Main$CuiListener error
+SEVERE: Failed to connect to http://jenkins-leader-svc.jenkins.svc.cluster.local/tcpSlaveAgentListener/: jenkins-leader-svc.jenkins.svc.cluster.local
+java.io.IOException: Failed to connect to http://jenkins-leader-svc.jenkins.svc.cluster.local/tcpSlaveAgentListener/: jenkins-leader-svc.jenkins.svc.cluster.local
+	at org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver.resolve(JnlpAgentEndpointResolver.java:216)
+	at hudson.remoting.Engine.innerRun(Engine.java:755)
+	at hudson.remoting.Engine.run(Engine.java:543)
+Caused by: java.net.UnknownHostException: jenkins-leader-svc.jenkins.svc.cluster.local
+	at java.base/java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.base/java.net.Socket.connect(Unknown Source)
+	at java.base/sun.net.NetworkClient.doConnect(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.New(Unknown Source)
+	at java.base/sun.net.www.http.HttpClient.New(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver.resolve(JnlpAgentEndpointResolver.java:213)
+	... 2 more
+
+
+ERROR: Failed to launch docker-build-5znt0-wjps3
+java.lang.IllegalStateException: Containers are terminated with exit codes: {jnlp=255}
+	at org.csanchez.jenkins.plugins.kubernetes.KubernetesLauncher.checkTerminatedContainers(KubernetesLauncher.java:274)
+	at org.csanchez.jenkins.plugins.kubernetes.KubernetesLauncher.launch(KubernetesLauncher.java:223)
+	at hudson.slaves.SlaveComputer.lambda$_connect$0(SlaveComputer.java:298)
+	at jenkins.util.ContextResettingExecutorService$2.call(ContextResettingExecutorService.java:46)
+	at jenkins.security.ImpersonatingExecutorService$2.call(ImpersonatingExecutorService.java:80)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[8mha:////4Eq44IsJCUWPh3JS6E0dI/LA0HKT/Bi0tF3SvYEdDQoXAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbaWOsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzDEWYIfa/QeYbFEMvAAAAA==[0m[Pipeline] // node
+[8mha:////4NxqZXvs1eFWAcXnIIDZIlqRObqplJirL44MFHyk2yeOAAAAox+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbmFgYK1tC4wmQRYQl/7PAult5Iq/mHSRuYuUkk8yb5r3esM4JTpQs9wZ7h1k7HsNo6+ITpf4WaOKerlwTZgqGSzNJ6sx5QUnFwBLWwErAxqAOlB3aAlvh1UO1QaFtLyXV7yigcd0AT2CimotK5Qtzgt197DLhz/NXAHOMBdihdv8BvnU2RrwAAAA=[0m[Pipeline] }
+[8mha:////4AydDHfThA1mGYFKqCdYktQ0pV813ILs8GYm8TR+qsO4AAAAox+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRb2JgYK1tC4wmQRYQl/7PAult5Iq/mHSRuYuUkk8yb5r3esM4JTpQs9wZ7h1k7HsNo6+ITpf4WaOKerlwTZgqGSzNJ6sx5QUnFwBLWwErAxqAOlB3aAlvh1UO1QaFtLyXV7yigcd0AT2CimotK5Qtzgt197DLhz/NXAHOMBdihdv8BzHcCWrwAAAA=[0m[Pipeline] // podTemplate
+[8mha:////4ENeYlLvv+8KLWXfHu87jr1Pe9bgqVytw4788K7m2HN9AAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQSb2BljZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j/qbmUQvAAAAA==[0m[Pipeline] End of Pipeline
+Queue task was cancelled
+org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: 835f8936-b6e6-449d-b423-1308c8cc6873
+Finished: ABORTED

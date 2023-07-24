@@ -1,0 +1,61 @@
+Started by user [8mha:////4BB5pFU8yk4XnEFZXZ/mx+Xqnik2+am0LDdht9Znt4XvAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Obtained Jenkinsfile from git https://github.com/CBNU-DCLab/newModule.git
+[8mha:////4LiovPVEEzbVGCwyGPIYd/TvwRyFc4xagHxsvd3clMF3AAAAoh+LCAAAAAAAAP9tjTEOwjAQBM8BClpKHuFItIiK1krDC0x8GCfWnbEdkooX8TX+gCESFVvtrLSa5wtWKcKBo5UdUu8otU4GP9jS5Mixv3geZcdn2TIl9igbHBs2eJyx4YwwR1SwULBGaj0nRzbDRnX6rmuvydanHMu2V1A5c4MHCFXMWcf8hSnC9jqYxPTz/BXAFEIGsfuclm8zQVqFvQAAAA==[0m[Pipeline] Start of Pipeline
+[8mha:////4L4QZmbLZ3b6qIQ2FUDgR9pHYrYhEo3XL00i30eDIyX7AAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] podTemplate
+[8mha:////4DKmkAb+1af7aZ1YAHgh0AHYkjHD1D5ytEZhOvGwOvTjAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4Lf18tnxfEHpH+uWpb0Z/p2tm1cq6Qf/OedEAMcoyaczAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] node
+Created Pod: kubernetes default/docker-build-8jftp-wh1pk
+default/docker-build-8jftp-wh1pk Container jnlp was terminated (Exit Code: 0, Reason: Completed)
+
+- docker -- running
+-----Logs-------------
+
+
+- git -- running
+-----Logs-------------
+
+
+- jnlp -- terminated (0)
+-----Logs-------------
+ -noreconnect                          : If the connection ends, don't retry
+                                         and just exit. (default: false)
+ -protocols VAL                        : Specify the remoting protocols to
+                                         attempt when instanceIdentity is
+                                         provided.
+ -proxyCredentials USER:PASSWORD       : HTTP BASIC AUTH header to pass in for
+                                         making HTTP authenticated proxy
+                                         requests.
+ -tunnel HOST:PORT                     : Connect to the specified host and
+                                         port, instead of connecting directly
+                                         to Jenkins. Useful when connection to
+                                         Jenkins needs to be tunneled. Can be
+                                         also HOST: or :PORT, in which case the
+                                         missing portion will be auto-configured
+                                         like the default behavior
+ -url URL                              : Specify the Jenkins root URLs to
+                                         connect to.
+ -version                              : Shows the version of the remoting jar
+                                         and then exits (default: false)
+ -webSocket                            : Make a WebSocket connection to Jenkins
+                                         rather than using the TCP port.
+                                         (default: false)
+ -webSocketHeader NAME=VALUE           : Additional WebSocket header to set, eg
+                                         for authenticating with reverse
+                                         proxies. To specify multiple headers,
+                                         call this flag multiple times, one
+                                         with each header
+ -workDir FILE                         : Declares the working directory of the
+                                         remoting instance (stores cache and
+                                         logs by default)
+
+
+- kubectl -- running
+-----Logs-------------
+
+[8mha:////4Eq44IsJCUWPh3JS6E0dI/LA0HKT/Bi0tF3SvYEdDQoXAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbaWOsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzDEWYIfa/QeYbFEMvAAAAA==[0m[Pipeline] // node
+[8mha:////4NxqZXvs1eFWAcXnIIDZIlqRObqplJirL44MFHyk2yeOAAAAox+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbmFgYK1tC4wmQRYQl/7PAult5Iq/mHSRuYuUkk8yb5r3esM4JTpQs9wZ7h1k7HsNo6+ITpf4WaOKerlwTZgqGSzNJ6sx5QUnFwBLWwErAxqAOlB3aAlvh1UO1QaFtLyXV7yigcd0AT2CimotK5Qtzgt197DLhz/NXAHOMBdihdv8BvnU2RrwAAAA=[0m[Pipeline] }
+[8mha:////4AydDHfThA1mGYFKqCdYktQ0pV813ILs8GYm8TR+qsO4AAAAox+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRb2JgYK1tC4wmQRYQl/7PAult5Iq/mHSRuYuUkk8yb5r3esM4JTpQs9wZ7h1k7HsNo6+ITpf4WaOKerlwTZgqGSzNJ6sx5QUnFwBLWwErAxqAOlB3aAlvh1UO1QaFtLyXV7yigcd0AT2CimotK5Qtzgt197DLhz/NXAHOMBdihdv8BzHcCWrwAAAA=[0m[Pipeline] // podTemplate
+[8mha:////4ENeYlLvv+8KLWXfHu87jr1Pe9bgqVytw4788K7m2HN9AAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQSb2BljZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j/qbmUQvAAAAA==[0m[Pipeline] End of Pipeline
+Queue task was cancelled
+org.jenkinsci.plugins.workflow.actions.ErrorAction$ErrorId: e271f367-fb7e-4c63-a092-1fb09db528b0
+Finished: ABORTED
